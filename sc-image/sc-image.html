@@ -1,0 +1,98 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <sc-image src="cat.png" orientation="portrait"></sc-image>
+
+@element sc-image
+@blurb Element providing a more elaborate image tag.
+@status alpha
+@homepage http://streamcards.github.io/sc-image
+-->
+<polymer-element name="sc-image" attributes="src width height aspect orientation overflow">
+
+  <template>
+
+    <link rel="stylesheet" href="sc-image.css" />
+    <paper-shadow id="shadow" z="{{z}}" animated="true" />
+
+    <div id="image" style="background-image:url({{src}}); background-position: {{overflow}}"></div>
+
+  </template>
+
+  <script>
+  Polymer('sc-image', {
+    src: '',
+
+    width: '200',
+
+    height: 'auto',
+
+    orientation: 'auto', // auto, landscape, portrait
+
+    aspect: '4:3', // 4:3, 16:9, 16:10
+
+    overflow: 'center',
+
+    z: 1,
+
+    observe: {
+      width: 'resize',
+      height: 'resize'
+    },
+
+    ready: function() {
+      this.addEventListener('mouseover', function() {
+        this.z = 2;
+      });
+      this.addEventListener('mouseout', function() {
+        this.z = 1;
+      });
+      this.addEventListener('mousedown', function() {
+        this.z = 5;
+      });
+      this.addEventListener('mouseup', function() {
+        this.z = 2;
+      });
+    },
+
+    resize: function() {
+      if (this.width === 'auto' && this.height === 'auto') {
+
+        // both width and height are 'auto'
+        // ... add <img> tag
+        this.$.image.innerHTML = '<img src="' + this.src + '" />';
+        this.$.image.style.backgroundImage = '';
+
+      } else if (this.width === 'auto' || this.height === 'auto') {
+
+        // either width or height (or none of both) are 'auto'
+        // format according to aspect and orientation settings
+        var width = parseInt(this.width),
+          height = parseInt(this.height),
+          ratio = (m = this.aspect.match(/(\d+):(\d+)/)) ? m[1] / m[2] : parseFloat(this.aspect);
+        switch (this.orientation) {
+          case 'portrait':
+            if (this.width === 'auto') width = height * ratio;
+            if (this.height === 'auto') height = width * ratio;
+            break;
+          case 'landscape':
+          case 'auto':
+          default:
+            if (this.width === 'auto') width = height / ratio;
+            if (this.height === 'auto') height = width / ratio;
+        }
+        this.style.width = width + 'px';
+        this.style.height = height + 'px';
+
+      }
+    }
+
+  });
+  </script>
+
+</polymer-element>
