@@ -1,7 +1,7 @@
 Streamcards
 ===========
 
-![streamcards logo](streamcards-logo-xsmall.png)
+![streamcards logo](app/images/streamcards-logo-xsmall.png)
 
 Streamcards is a webservice that lets you build your own website using dropbox, google drive and amazon.
 
