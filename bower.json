@@ -1,0 +1,29 @@
+{
+  "name": "streamcards-io",
+  "private": true,
+  "dependencies": {
+    "platform": "Polymer/platform#~0.3.5",
+    "jquery": "~1.11.0",
+    "angular": "~1.2.21",
+    "angular-route": "~1.2.21",
+    "document-register-element": "WebReflection/document-register-element#~0.0.8",
+    "DOM4": "WebReflection/dom4#~1.0.1",
+    "core-toolbar": "Polymer/core-toolbar#~0.3.5",
+    "core-icon-button": "Polymer/core-icon-button#~0.3.5",
+    "paper-button": "Polymer/paper-button#~0.3.5",
+    "core-header-panel": "Polymer/core-header-panel#~0.3.5",
+    "core-scroll-header-panel": "Polymer/core-scroll-header-panel#~0.3.5"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "document-register-element": {
+      "main": "build/document-register-element.max.js"
+    },
+    "DOM4": {
+      "main": [
+        "build/ie8.js",
+        "build/dom4.max.js"
+      ]
+    }
+  }
+}

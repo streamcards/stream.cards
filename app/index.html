@@ -1,0 +1,77 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <title>streamcards.io</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+  <!-- build:js scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/platform/platform.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/document-register-element/build/document-register-element.max.js"></script>
+  <script src="../bower_components/DOM4/build/ie8.js"></script>
+  <script src="../bower_components/DOM4/build/dom4.max.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="../bower_components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/core-scroll-header-panel/core-scroll-header-panel.html">
+  <link rel="import" href="../bower_components/core-header-panel/core-header-panel.html">
+</head>
+
+<body ng-app="streamcards" fullbleed unresolved layout vertical>
+  <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <core-scroll-header-panel flex>
+    <core-toolbar>
+      <a class="logo" href="#/">
+        <img src="images/streamcards-logo-small.png" />Streamcards
+      </a>
+      <span flex></span>
+      <paper-button id="register" label="Register" raisedButton></paper-button>
+    </core-toolbar>
+
+    <ng-view content></ng-view>
+
+  </core-scroll-header-panel>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {
+        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = '//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+  </script>
+
+  <!-- build:js({app,.tmp}) scripts/main.js -->
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>

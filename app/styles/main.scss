@@ -1,0 +1,132 @@
+// bower:scss
+// endbower
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+}
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    font-size: 1.6rem;
+}
+
+core-toolbar {
+    font-size: 1.5rem;
+    background: rgba(black, .6);
+    height: 5rem;
+
+    a.logo {
+        font-size: 1.5em;
+        vertical-align: top;
+        line-height: 1.55;
+        height: 1.5em;
+        color: white;
+        text-decoration: none;
+        text-shadow: 1px 1px 3px rgba(black, .3);
+
+        img {
+            width: 1.25em;
+            height: auto;
+            background-color: white;
+            border-radius: 20%;
+            border: 3px solid white;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            background-clip: content-box;
+            margin-right: .5em;
+        }
+
+        &:hover {
+
+        }
+    }
+
+    #register {
+        background: #4285f4;
+        color: #fff;
+        font-size: .8em;
+    }
+
+}
+
+ng-view[content] {
+    > header {
+        background-image: url(../images/cover.jpg);
+        background-size: cover;
+
+        min-height: 55%;
+        height: 52vw;
+        margin-top: -10.5rem;
+
+        color: white;
+        text-shadow: 1px 1px 3px black;
+
+        h1 {
+            font-size: 4.8rem;
+            width: 75%;
+            text-align: center;
+            line-height: .9;
+            margin-top: 10.5rem;
+        }
+
+        #copytext {
+            font-size: 2.4rem;
+            width: 60%;
+            text-align: center;
+        }
+    }
+
+    > footer {
+        height: 5rem;
+        background-color: #e0e0e0;
+        font-size: 80%;
+    }
+}
+
+$mediaSectionMargin: 3rem;
+
+section#how, section#why, section#tech {
+    /* margin: $mediaSectionMargin 0; */
+
+    h2 {
+        width: 100%;
+    }
+
+    > * {
+        padding: 0 $mediaSectionMargin;
+        box-sizing: border-box;
+    }
+}
+
+section#how {
+    > section {
+        width: 50%;
+    }
+}
+
+section#why {
+    background-color: #e0e0e0;
+
+    > section {
+        width: 100%;
+    }
+}
+
+section#tech {
+
+    > p {
+        width: 100%;
+    }
+
+    > section {
+        width: 33%;
+    }
+}
+
+@media (max-width: 48rem) {
+
+    body > header {
+        font-size: 1.4rem;
+    }
+}

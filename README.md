@@ -23,7 +23,7 @@ Find some of the parts that make streamcards below.
 
 Elements are mostly Polymer web component elements. They may be incorporated into your app as well.
 
-sc-image [gitHub][0], [demo][1] &mdash; Provides a more elaborate img-tag with shadow
+sc-image [GitHub][0], [demo][1] &mdash; Provides a more elaborate img-tag with shadow
 
 ##Demo apps
 
